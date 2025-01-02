@@ -49,3 +49,10 @@ plot(pressure)
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 # Referensi
+```{r}
+library(ggplot2)
+data <- data.frame(x = rnorm(100), y = rnorm(100))
+ggplot(data, aes(x = x, y = y)) + 
+  geom_point()
+```
+
