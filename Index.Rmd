@@ -1,6 +1,6 @@
 ---
 title: "My Document"
-author: "Deden Istiawan-Institut Teknologi Statistika dan Bisnis Muhammadiyah"
+author: "DilaOktafiani-Institut Teknologi Statistika dan Bisnis Muhammadiyah Semarang"
 date: "`r Sys.Date()`"
 output: 
   html_document:
@@ -53,6 +53,34 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 library(ggplot2)
 data <- data.frame(x = rnorm(100), y = rnorm(100))
 ggplot(data, aes(x = x, y = y)) + 
-  geom_point()
+  geom_point() +
+  labs(title = "Plot titik", x = "sumbu x", y = "sumbu y") +
+  theme_dark()
 ```
+
+# Buat data frame contoh dengan variabel kategorik
+```{r}
+data <- data.frame(x = rnorm(100), y = rnorm(100), grup = sample(c("A", "B", "C", "D"), 100, replace = TRUE))
+ggplot(data, aes(x = x, y = y, color = grup)) + 
+  geom_point() +
+  facet_wrap(~grup) +
+  scale_color_manual(values = c("A" = "lightblue", "B" = "pink", "C" = "green", "D" = "yellow"))
+```
+
+```{r}
+library(readr)
+lizard <- read.csv("lizards.csv")
+View(lizard)
+```
+
+```{r}
+library(ggplot2)
+ggplot(lizard, aes(x = total_length, y = weight)) +
+  geom_point()
+  labs(title = "Plot titik", x = "total length", y = "weight") +
+  theme_dark()
+```
+
+
+
 
