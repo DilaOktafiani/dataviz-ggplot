@@ -83,6 +83,59 @@ ggplot(lizard, aes(x = total_length, y = weight)) +
   theme_classic()
 ```
 
+4. Plot Sebaran Titik (Jitter Plot)
+```{r}
+library(ggplot2)
+ggplot(lizard, aes(x = total_length, y = common_name)) +
+  geom_jitter()
+  labs(title = "Plot titik", x = "total length", y = "common name") +
+  theme_classic()
+```
+
+5. Histogram Panjang Total Lizard
+```{r}
+library(ggplot2)
+ggplot(lizard, aes(x = total_length)) +
+  geom_histogram()
+  labs(title = "Plot titik", x = "total length") +
+  theme_classic()
+```
+
+6. Bar Plot common name
+```{r}
+library(ggplot2)
+ggplot(lizard, aes(y = common_name)) +
+  geom_bar()
+  labs(title = "Plot titik", y = "common_name")
+```
+
+7. Distribusi Berat Lizard
+```{r}
+library(ggplot2)
+ggplot(lizard, aes(x = weight)) +
+  geom_histogram(colour= "blue", fill = "pink", size = 1, line = ".") +
+   labs(title = "Plot titik", x = "weight")
+  theme_classic()
+```
+
+8. Relasi Panjang dan Berat pada Lizard
+```{r}
+library(ggplot2)
+ggplot(lizard, aes(x = total_length, y = weight)) +
+  geom_point(colour= "blue", shape = 3, size = 2)
+  labs(title = "Plot titik", x = "total length", y = "weight") +
+  theme_classic()
+```
+
+9. Color by common name
+```{r}
+library(ggplot2)
+ggplot(lizard, aes(x = total_length, y = weight, color = common_name)) +
+  geom_point(shape = 15, size = 2)
+  labs(title = "Plot titik", x = "total length", y = "weight") +
+  theme_classic()
+```
+
 # Read Data
 Berikut adalah langkah-langkah untuk membaca data dan membuat visualisasi menggunakan **ggplot2**
 
@@ -104,3 +157,4 @@ Untuk membuat boxplot, Anda bisa menggunakan geometri `geom_boxplot()`untuk meli
 Dengan menggunakan **RMarkdown**, visualisasi ini akan ditampilkan langsung setelah Anda meng-**render** dokumen menjadi HTML, PDF, atau format lainnya.
 
 Dengan mengikuti langkah-langkah ini, Anda dapat membuat visualisasi data yang informatif dengan **ggplot2** dalam **RMarkdown**.
+
