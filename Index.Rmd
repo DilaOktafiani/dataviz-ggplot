@@ -113,7 +113,7 @@ ggplot(lizard, aes(y = common_name)) +
 ```{r}
 library(ggplot2)
 ggplot(lizard, aes(x = weight)) +
-  geom_histogram(colour= "blue", fill = "pink", size = 1, line = ".") +
+  geom_histogram(colour= "lightblue", fill = "pink", size = 1, line = ".") +
    labs(title = "Plot titik", x = "weight")
   theme_classic()
 ```
@@ -122,7 +122,7 @@ ggplot(lizard, aes(x = weight)) +
 ```{r}
 library(ggplot2)
 ggplot(lizard, aes(x = total_length, y = weight)) +
-  geom_point(colour= "blue", shape = 3, size = 2)
+  geom_point(colour= "green", size = 2)
   labs(title = "Plot titik", x = "total length", y = "weight") +
   theme_classic()
 ```
@@ -134,6 +134,44 @@ ggplot(lizard, aes(x = total_length, y = weight, color = common_name)) +
   geom_point(shape = 15, size = 2)
   labs(title = "Plot titik", x = "total length", y = "weight") +
   theme_classic()
+```
+
+10. Membuat Plot Dasar Statis
+```{r}
+library(gapminder)
+library(ggplot2)
+library(gganimate)
+```
+
+```{r}
+library(gapminder)
+data=gapminder
+data
+```
+
+```{r}
+library(ggplot2)
+ggplot(data, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(colour = "pink") +
+  scale_x_log10() +
+  labs(title = "Plot titik", x = "gdpPercap", y = "lifeExp") +
+  theme_classic()
+```
+
+11. Menambahkan Elemen (`aes')
+```{r}
+library(ggplot2)
+ggplot(data, aes(x = gdpPercap, y = lifeExp, color = continent)) + 
+  geom_point( aes (size = pop)) +
+  scale_x_log10() +
+  scale_color_viridis_d(option = "viridis")
+  labs(title = "Plot titik", x = "gdpPercap", y = "lifeExp") +
+  theme_classic()
+```
+
+12. Membuat Plot Dinamis
+```{r}
+
 ```
 
 # Read Data
